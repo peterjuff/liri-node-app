@@ -17,6 +17,8 @@ var spotify = new Spotify(keys.spotify);
 
 var client = new Twitter
 
+
+
 switch (userRequest) {
     case "my-tweets":
         myTweets();
@@ -24,6 +26,10 @@ switch (userRequest) {
 
     case "spotify-this-song":
         spotifyThisSong();
+        break;
+    
+    case "movie-this":
+        movieThis();
         break;
 }
 
@@ -44,5 +50,20 @@ function spotifyThisSong() {
         }
      
     });
+}
+
+function movieThis() {
+    var movie = process.argv.slice(3);
+    var queryUrl = `http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=trilogy`;
+    request(queryUrl, function(error, response, body) {
+        
+          
+          if (!error && response.statusCode === 200) {
+    
+            console.log("Release Year: " + JSON.parse(body).Year);
+          }
+        });
+    
+
 }
 
