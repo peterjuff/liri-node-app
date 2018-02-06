@@ -37,10 +37,11 @@ function myTweets() {
     var params = {screen_name: 'Peter J'};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
       if (!error) {
-        console.log(tweets);
+        console.log(myTweets);
       }
     });
 }
+//console.log(tweet);
 
 function spotifyThisSong() {
     spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
@@ -59,8 +60,18 @@ function movieThis() {
         
           
           if (!error && response.statusCode === 200) {
-    
-            console.log("Release Year: " + JSON.parse(body).Year);
+            var movieData = JSON.parse(body);
+            console.log("Release Year: " + movieData.Year);
+            console.log("Movie Title: " + movieData.Title);
+            console.log("Year: " + movieData.Year);
+            console.log("IMDB Rating: " + movieData.imbdRating);
+            console.log("Country: " + movieData.Country);
+            console.log("Language: " + movieData.Language);
+            console.log("Plot: " + movieData.Plot);
+            console.log("Actors: " + movieData.Actors);
+          }
+          if (movie = null || undefined) {
+              console.log(movie = "Mr. Nobody");
           }
         });
     
