@@ -97,15 +97,15 @@ function movieThis() {
 
 }
 
-function doWhatItSays() {
-    fs.readFile("random.txt", "utf8", function(error, data)
-    if (error) {
-        return console.log(error);
-      }
+//function doWhatItSays() {
+  //  fs.readFile("random.txt", "utf8", function(error, data);
+    //if (error) {
+      //  return console.log(error);
+     // }
 
     //fs.writeFile to add command to the command line.
 
-}
+//}
 
 
 
