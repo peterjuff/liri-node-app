@@ -8,6 +8,7 @@ var request = require("request");
 var fs = require("fs");
 
 var userRequest = process.argv[2];
+var nodeArgs = process.argv;
 
 var Twitter = require("Twitter");
 var Spotify = require('node-spotify-api');
@@ -53,10 +54,15 @@ function myTweets() {
 function spotifyThisSong() {
     var song = process.argv.slice(3);
     spotify.search({ type: 'track', query: song, limit: 1}, function(err, data) {
-        if ( err ) {
-            console.log('Error occurred: ' + err);
-            return;
+        if ( !err ) {
+            var song = "";
+            for (var i = 3; i < nodeArgs.length; i++) {
+                song = song + nodeArgs[i];
+            // console.log('Error occurred: ' + err);
+            // return;
+            }
         }
+
 
         else {
             //console.log(data.tracks.items);
