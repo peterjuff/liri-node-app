@@ -79,54 +79,37 @@ function spotifyThisSong() {
             + " Album: " + info.album.name+ "\r\n"
             + " Preview URL: " + info.preview_url);
         };
-        
+
     });
 
 };    
-    //     if ( !err ) {
-    //         var song = "";
-    //         for (var i = 3; i < nodeArgs.length; i++) {
-    //             song = song + nodeArgs[i];
-    //         // console.log('Error occurred: ' + err);
-    //         // return;
-    //         }
-    //     }
 
-
-    //     else {
-    //         //console.log(data.tracks.items);
-    //         console.log("Artist: " + data.tracks.album);
-
-
-    //     }
-
-    //     if (process.argv.slice(3) === null || undefined) {
-    //         console.log(song = "The Sign");
-    //     }
-     
-    // });
 
 
 function movieThis() {
     var movie = process.argv.slice(3);
+    if (process.argv[3] === undefined) {
+        movie = "Mr. Nobody";
+    }
     var queryUrl = `http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=trilogy`;
     request(queryUrl, function(error, response, body) {
         
-          
           if (!error && response.statusCode === 200) {
             var movieData = JSON.parse(body);
-            console.log("Release Year: " + movieData.Year);
-            console.log("Movie Title: " + movieData.Title);
-            console.log("Year: " + movieData.Year);
-            console.log("IMDB Rating: " + movieData.imbdRating);
-            console.log("Country: " + movieData.Country);
-            console.log("Language: " + movieData.Language);
-            console.log("Plot: " + movieData.Plot);
-            console.log("Actors: " + movieData.Actors);
+            console.log("Movie Information: " + "\r\n",
+            "Title: " + movieData.Title + "\r\n"
+            + " Year: " + movieData.Year + "\r\n"
+            + " IMDB Rating: " + movieData.imdbRating + "\r\n"
+            + " Country: " + movieData.Country + "\r\n"
+            + " Language: " + movieData.Language + "\r\n"
+            + " Plot: " + movieData.Plot + "\r\n"
+            + " Actors: " + movieData.Actors);
           }
-          if (movie === null || undefined) {
-              console.log(movie = "Mr. Nobody");
-          }
+
+          else {
+              console.log(error);
+          };
+
         });
     
 
