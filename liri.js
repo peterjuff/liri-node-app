@@ -13,7 +13,6 @@ var nodeArgs = process.argv;
 var Twitter = require("Twitter");
 var Spotify = require('node-spotify-api');
 
-
 var spotify = new Spotify(keys.spotify);
 
 var client = new Twitter
@@ -35,16 +34,29 @@ switch (userRequest) {
 
     case "do-what-it-says":
         doWhatItSays();
-        break;    
+        break;  
+        
+    default:
+        console.log("I'm sorry, I'm not smart enough.")    
 }
 
 function myTweets() {
-    var params = {screen_name: 'Peter J'};
+    var params = {
+        screen_name: 'Peter J',
+        count: 20
+    };
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
-      if (error) {
-        console.log("Error" + JSON.stringify());
-        console.log(response);
+      if (!error) {
+          for (var i = 0; i < tweets.length; i++) {
+              console.log("Tweet: " + tweets[i].text + " Date posted: " + tweets[i].create_at);
+          }
+     
       }
+
+      else {
+          console.log(error);
+      }
+
     });
 }
 //console.log(tweets);
