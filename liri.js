@@ -85,7 +85,6 @@ function spotifyThisSong() {
 };    
 
 
-
 function movieThis() {
     var movie = process.argv.slice(3);
     if (process.argv[3] === undefined) {
@@ -110,20 +109,32 @@ function movieThis() {
               console.log(error);
           };
 
-        });
+    });
     
 
 }
 
-//function doWhatItSays() {
-  //  fs.readFile("random.txt", "utf8", function(error, data);
-    //if (error) {
-      //  return console.log(error);
-     // }
+function doWhatItSays() {
+   fs.readFile("random.txt", "utf8", function(error, data) {
+    if (error) {
+       return console.log(error);
+    };
 
-    //fs.writeFile to add command to the command line.
+    var dataArr = data.split(",").join("");
+    console.log("$ node" + " liri.js " + dataArr);
 
-//}
+    })
+
+}
+
+fs.appendFile("log.txt", process.argv.slice(2) + "\r\n", function(err) {
+    if(err) {
+        console.log(err);
+    }
+    else {
+        console.log("Appended!");
+    }
+});
 
 
 
