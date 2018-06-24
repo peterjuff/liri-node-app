@@ -58,37 +58,54 @@ function myTweets() {
       }
 
     });
+
 }
-//console.log(tweets);
-//Errorundefined
-//regenerated access tokens
+
 
 function spotifyThisSong() {
     var song = process.argv.slice(3);
+    if (userRequest === undefined) {
+        song = 'the sign';
+    };
+
     spotify.search({ type: 'track', query: song, limit: 1}, function(err, data) {
-        if ( !err ) {
-            var song = "";
-            for (var i = 3; i < nodeArgs.length; i++) {
-                song = song + nodeArgs[i];
-            // console.log('Error occurred: ' + err);
-            // return;
-            }
+        if (err) {
+            console.log('Error occured: ' + err);
         }
-
-
         else {
-            //console.log(data.tracks.items);
-            console.log("Artist: " + data.tracks.album);
-
-
-        }
-
-        if (process.argv.slice(3) === null || undefined) {
-            console.log(song = "The Sign");
-        }
-     
+            var info = data.tracks.items[0];
+            console.log("Song: " + info.name+ "\r\n"
+            + " Artist: " + info.artists[0].name+ "\r\n"
+            + " Album: " + info.album.name+ "\r\n"
+            + " Preview URL: " + info.preview_url);
+        };
+        
     });
-}
+
+};    
+    //     if ( !err ) {
+    //         var song = "";
+    //         for (var i = 3; i < nodeArgs.length; i++) {
+    //             song = song + nodeArgs[i];
+    //         // console.log('Error occurred: ' + err);
+    //         // return;
+    //         }
+    //     }
+
+
+    //     else {
+    //         //console.log(data.tracks.items);
+    //         console.log("Artist: " + data.tracks.album);
+
+
+    //     }
+
+    //     if (process.argv.slice(3) === null || undefined) {
+    //         console.log(song = "The Sign");
+    //     }
+     
+    // });
+
 
 function movieThis() {
     var movie = process.argv.slice(3);
