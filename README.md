@@ -1,6 +1,8 @@
-# liri-node-app
-LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
+# Liri-Node-App
+
+LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 LIRI will respond to the following commands:
+
 * `my-tweets`
 
 * `spotify-this-song`
@@ -8,3 +10,18 @@ LIRI will respond to the following commands:
 * `movie-this`
 
 * `do-what-it-says`
+
+![screenshot](images/screen-gif.mov)
+
+## Software
+
+* [Node.js](https://nodejs.org/en/)
+
+# Authors
+
+* [Peter Juffernbruch](https://github.com/peterjuff)
+
+# Acknowledgments
+
+* [Northwestern University Coding Bootcamp](https://bootcamp.northwestern.edu/coding/)
+* Homework week ten
