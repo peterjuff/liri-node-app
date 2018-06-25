@@ -11,7 +11,7 @@ LIRI will respond to the following commands:
 
 * `do-what-it-says`
 
-![screenshot](images/screen-gif.mov)
+![demo](http://www.giphy.com/gifs/zJeAzAoa5noGYre3lX)
 
 ## Software
 
