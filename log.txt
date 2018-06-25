@@ -12,3 +12,12 @@ movie-this,zoolander
 movie-this,zoolander
 movie-this,zoolander
 movie-this,zoolander
+spotify-this-song,bugman
+spotify-this-song,song,2
+spotify-this-song,heartbreaker
+beetlebum
+spotify-this-song,coffee,and,tv
+spotify-this-song,coffee,and,tv
+spotify-this-song,coffee,and,tv
+spotify-this-song,coffee,and,tv
+spotify-this-song,coffee,and,tv
